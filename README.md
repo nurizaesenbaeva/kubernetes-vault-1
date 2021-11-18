@@ -12,7 +12,7 @@ Create the configmap
  
 
 
-5) Deploy vault services 
+5) Deploy vault services : 
 Services in Kubernetes are the objects that pods use to communicate with each other.
 ClusterIP type services are usually used for inter-pod communication.
 
