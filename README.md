@@ -4,7 +4,7 @@
 We need to create them first:
  # kubectl apply -f rbac.yaml
 
-4)Creating Vault ConfigMaps
+4)Creating Vault ConfigMaps.
 A ConfigMaps in Kubernetes lets us mount files on containers without the need to make changes to the Dockerfile or rebuilding the container image. 
 Create the configmap
 
@@ -12,13 +12,13 @@ Create the configmap
  
 
 
-5) Deploy vault services : 
+5) Deploy vault services . 
 Services in Kubernetes are the objects that pods use to communicate with each other.
 ClusterIP type services are usually used for inter-pod communication.
 
 # kubectl apply -f services.yaml
 
-6)StatefulSet 
+6)StatefulSet .
 StatefulSet is the Kubernetes object used to manage stateful applications.
 It’s preferred over deployments for this use case as it provides guarantees about the ordering and uniqueness of these Pods i.e. the management of volumes is better with stateful sets.
 Vault is a stateful application i.e. it stores data (like configurations, secrets, metadata of vault operations) inside a volume. If the data is stored in memory, then the data will get erased once the pod restarts.
@@ -39,10 +39,10 @@ Vault is a stateful application i.e. it stores data (like configurations, secret
 
 
 INJECTOR
-9) Here we have injector (everything is done in a injector folder)
+9) Here we have injector (everything is done in a injector folder).
 To create a Service account , clusterrolebinding and cluster role
 # kubectl apply -f rbac.yaml
-10) creating mutatingwebhookconfiguration
+10) creating mutatingwebhookconfiguration...
  This webhook is responsible for intercepting and sending pod events to the injector controller. It sends the webhook to the injector controller’s service endpoint on /mutate path.
 
 # kubectl apply -f mutating-webhook.yaml
