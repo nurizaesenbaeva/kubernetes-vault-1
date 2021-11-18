@@ -58,7 +58,7 @@ we are using the  vault injector image hashicorp/vault-k8s:0.11.0
 
 
 
-			INJECTING SECRETS FOR APPLICATION
+INJECTING SECRETS FOR APPLICATION
 13) Exec into vault pod.
 
 # kubectl exec -it vault-0 -- /bin/sh  
